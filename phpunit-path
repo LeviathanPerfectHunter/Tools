@@ -1,0 +1,10 @@
+/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+/live/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/assets/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/asset/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/web/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/dashboard/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+/public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
